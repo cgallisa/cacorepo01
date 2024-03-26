@@ -14,5 +14,5 @@ metadata:
     github.com/project-slug: cacorepo1/projects/DaC
 spec:
   type: library
-  owner: cgallisa
+  owner: user:guest
   lifecycle: experimental
