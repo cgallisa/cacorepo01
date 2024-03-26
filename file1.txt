@@ -1,1 +1,10 @@
-myfirst file
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: file1
+  annotations:
+    github.com/project-slug: cgallisa/cacorepo01/file1.txt
+spec:
+  type: other
+  lifecycle: unknown
+  owner: cgallisa
