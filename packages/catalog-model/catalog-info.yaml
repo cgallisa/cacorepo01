@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: my-catalog-model
+  title: 'my/catalog-model'
+  description: Testing
+spec:
+  lifecycle: dev
+  type: backstage-common-library
+  owner: guest
