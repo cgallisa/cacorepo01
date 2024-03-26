@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: comp1
+  description: testing comp1 registration
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guest
