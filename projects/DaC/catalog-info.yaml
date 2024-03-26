@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: DaC
+  description: Centene's Data-as-Code
+  links:
+    - title: Application in CKP
+      url: https://dcodeapp.ckp-dev.aws.centene.com/
+    - title: Documentation
+      url: https://dcodeapp.ckp-dev.aws.centene.com/docs
+    - title: Maps
+      url: https://dcodeapp.ckp-dev.aws.centene.com/maps
+  annotations:
+    github.com/project-slug: cacorepo1/projects/DaC
+spec:
+  type: library
+  owner: cgallisa
+  lifecycle: experimental
