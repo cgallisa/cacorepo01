@@ -2,4 +2,5 @@
 
 Folder containing projects that I developed.
 
-- DaC ... Data as Code
+## Content
+- README.md ... file containing a description of this folder. This text is displayed by GitHub UI as you navigate to this location.
