@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cacorepo01
+  annotations:
+    github.com/project-slug: cgallisa/cacorepo01
+spec:
+  type: other
+  lifecycle: unknown
+  owner: cgallisa
