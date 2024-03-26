@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: DaC
+  description: Data-as-Code
+spec:
+  type: library
+  owner: guest
+  lifecycle: dev
