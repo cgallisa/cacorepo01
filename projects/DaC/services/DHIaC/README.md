@@ -6,6 +6,8 @@ Data Hub Ingestion as Code
   
 - catalog-info.yaml ... contains specs for this template to be registered, within Backstage Catalog.
   
+- docs ... folder containing document-as-code files, for this template.
+  
 - mkdocs.yml ... contains specs for the rendering of this teamplate's documentation, within Backsatge Docs.
 
 - template.yaml ... contains specs for the template to behave, within Backstage Create. When invoked by a user, it includes rendering of parms, execution of steps, etc.
