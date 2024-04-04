@@ -1,5 +1,5 @@
 # DHIaC
-Data Hub Ingestion as Code
+Data Hub Ingestion as Code - Service Template
 
 ## Content
 
