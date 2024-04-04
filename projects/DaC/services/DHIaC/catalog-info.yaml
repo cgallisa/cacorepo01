@@ -2,8 +2,9 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: DHIaC 1.0
-  description: Data Hub Ingestion as Code
-  Replicates a table from an application (i.e. Portico) to the EDH (Snowflake).
+  description: |
+    Data Hub Ingestion as Code
+    Replicates a table from an application (i.e. Portico) to the EDH (Snowflake).
   annotations:
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: cacorepo1/projects/DaC/services/DHIaC
