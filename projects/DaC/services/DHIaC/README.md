@@ -1,6 +1,8 @@
 # DHIaC
 Data Hub Ingestion as Code - Service Template
 
+This service consists of ingesting a table from an application (i.e. Portico) to the Enterprise Data Hub (Snowflake).
+
 ## Content
 
 - docs ... folder containing document-as-code files, for this template.
