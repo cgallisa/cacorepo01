@@ -1,7 +1,5 @@
-site_name: 'MySite Name'
-
+site_name: 'DHIaC mkdoc'
 nav:
   - Home: index.md
-
 plugins:
   - techdocs-core
