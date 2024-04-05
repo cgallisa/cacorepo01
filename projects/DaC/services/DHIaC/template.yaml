@@ -4,6 +4,9 @@ metadata:
   name: DHIaC
   title: EDH Ingestion Service V1.0
   description: A service to ingest a table from a source application (i.e. Portico) into EDH target Application (i.e. Snowflake schema for Portico)
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    
 spec:
   owner: user:guest
   type: service
