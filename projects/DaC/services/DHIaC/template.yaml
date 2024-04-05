@@ -54,7 +54,7 @@ spec:
       action: fetch:plain
       input:
         targetPath: ./docs
-        url: https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DHIaC/docs/
+        url: https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DHIaC/content/docs/
         
     # This step publishes the contents of the working directory to GitHub.
     - id: publish
