@@ -45,7 +45,7 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: https://github.com/cgallisa/cacorepo01/tree/main/projects/DaC/services/DHIaC/content
+        url: ./content
         values:
           name: ${{ parameters.name }}
           
