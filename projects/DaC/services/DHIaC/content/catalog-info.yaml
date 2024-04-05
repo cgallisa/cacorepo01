@@ -4,9 +4,7 @@ metadata:
 
   name: ${{ values.name | dump }}
   
-  description: This table is ingested from:
-  source ==> ${{ values.source }} 
-  into ==> ${{ values.target }}
+  description: This table is ingested from: [${{ values.source }}] into [${{ values.target }}]
   
   annotations:
     backstage.io/techdocs-ref: dir:.
