@@ -1,9 +1,8 @@
 apiVersion: scaffolder.backstage.io/v1beta3
-# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
 kind: Template
 metadata:
   name: DHIaC
-  title: EDH Ingestion Service V1.9
+  title: EDH Ingestion Service V1.0
   description: A service to ingest a table from a source application (i.e. Portico) into EDH target Application (i.e. Snowflake schema for Portico)
 spec:
   owner: user:guest
