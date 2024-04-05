@@ -1,14 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-
   name: xxxxx
-  
   description: This table is ingested from: _____________ into _________
-  
   annotations:
     backstage.io/techdocs-ref: dir:.
-    
 spec:
   type: service
   owner: user:guest
