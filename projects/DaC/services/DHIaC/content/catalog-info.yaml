@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: DHIaC20240405
-  description: This table is ingested f
+  name: ${{ values.name | dump }}
+  description: This table is ingested from ${{ values.name | dump }} to EDH
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
