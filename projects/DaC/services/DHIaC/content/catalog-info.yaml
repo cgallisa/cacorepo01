@@ -2,9 +2,9 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
 
-  name: ${{ values.name | dump }}
+  name: xxxxx
   
-  description: This table is ingested from: [${{ values.source }}] into [${{ values.target }}]
+  description: This table is ingested from: _____________ into _________
   
   annotations:
     backstage.io/techdocs-ref: dir:.
