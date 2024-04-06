@@ -16,7 +16,9 @@ spec:
   parameters:
     - title: Service Parameters
       required:
-        - name
+        - Source
+        - Schema
+        - Table
       properties:
         Source:
           title: Source Name
