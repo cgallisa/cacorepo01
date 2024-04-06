@@ -2,7 +2,6 @@
 
 This is the technical documentation for using the DHIaC Service in Backstage.
 
-![image](https://github.com/cgallisa/cacorepo01/assets/84481106/99185ab7-55b2-428c-95c9-1a6be8d60cc3)
 ## Parameters
 The service will ask the user for the information shown below.
 
@@ -20,8 +19,36 @@ The owner and repository name uniquely identifies the place in GitHub, where the
 ### Review
 All parameters will be displayed on the screen for review. Press the *CREATE* button if everything looks right.
 
+---
+
 ## Generated Code
 Upon successful execution of the code, this service will create the following:
+
 - JSON spec ... specification for instantiating the replication job.
-- catalog-info.yaml ... specification for registering the new component in Backsatge
-- docs ... folder containing documentation for this component.
+  
+- catalog-info.yaml ... specification for registering the new component in Backsatge, similar to the one below...
+
+```yaml
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name | dump }}
+  description: This table is ingested from ${{ values.name | dump }} to EDH
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  owner: user:guest
+  lifecycle: POC
+```
+  
+- docs ... folder containing documentation for this component, to be rendered in Backstage as `Techdocs`. MD files (markdown) similar to the one below...
+
+```diff
+# Techdoc - DHIaC Template
+
+This is the technical documentation for using the DHIaC Service in Backstage.
+
+## Parameters
+The service will ask the user for the information shown below.
+```
