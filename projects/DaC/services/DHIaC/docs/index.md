@@ -1,4 +1,4 @@
-# DHIaC Techdoc
+# Techdoc - DHIaC Template
 
 This is the technical documentation for using the DHIaC template in Backstage.
 
