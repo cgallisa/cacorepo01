@@ -2,11 +2,7 @@
 
 This is the technical documentation for using the DHIaC Service in Backstage.
 
-<span style="color:red;">
-This text will be red
-</span>
-
-## Parameters
+## [Parameters](https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DHIaC/docs/index.md#parameters)
 The service will ask the user for the information shown below.
 
 ### Service Parameters
@@ -23,7 +19,7 @@ The owner and repository name uniquely identifies the place in GitHub, where the
 ### Review
 All parameters will be displayed on the screen for review. Press the *CREATE* button if everything looks right.
 
-## Generated Code
+## [Generated Code](https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DHIaC/docs/index.md#generated%code)
 Upon successful execution of the code, this service will create the following:
 - JSON spec ... specification for instantiating the replication job.
 - catalog-info.yaml ... specification for registering the new component in Backsatge
