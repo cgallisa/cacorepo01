@@ -2,6 +2,10 @@
 
 This is the technical documentation for using the DHIaC Service in Backstage.
 
+<span style="color:red;">
+This text will be red
+</span>
+
 ## Parameters
 The service will ask the user for the information shown below.
 
