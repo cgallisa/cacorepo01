@@ -24,7 +24,7 @@ All parameters will be displayed on the screen for review. Press the `CREATE` bu
 ## Generated Code
 Upon successful execution of the code, this service will create the following:
 
-- `code.json` ... specification for instantiating the replication job.
+- `code-DHIaC.json` ... specification for instantiating the replication job.
 
 ```json
 {
