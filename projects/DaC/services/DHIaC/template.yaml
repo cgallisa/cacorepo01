@@ -18,13 +18,37 @@ spec:
       required:
         - name
       properties:
-        name:
-          title: Fully Qualified Source (table)
+        Source:
+          title: Source Name
           type: string
-          description: DHIaC unique key... i.e. [source name].[schema].[table]
+          description: Usually an application name or database name
+          maxLength: 30
+          default: Portico
+              enum:
+                - Amisys
+                - Portico
+                - UMV
+                - Xcelys
+        Schema:
+          title: Schema Name
+          type: string
+          description: Usually a schema name in the source database
+          maxLength: 30
+          default: PORTOWN
+              enum:
+                - AMIOWN
+                - PORTOWN
+                - Members
+                - DORIS
           ui:autofocus: true
           ui:options:
             rows: 5
+        Table:
+          title: Table Name
+          type: string
+          description: Name of the table to be replicated
+          maxLength: 30
+          default: TABLE
     - title: Repository Location
       required:
         - repoUrl
@@ -47,7 +71,9 @@ spec:
       input:
         url: ./content
         values:
-          name: ${{ parameters.name }}
+          Source: ${{ parameters.Source }}
+          Schema: ${{ parameters.Schema }}
+          Table: ${{ parameters.Table }}
           
     - id: fetch-docs
       name: Fetch Docs
@@ -57,7 +83,9 @@ spec:
         url: ./docs
         # url: https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DHIaC/content/docs/
         values:
-          name: ${{ parameters.name }}
+          Source: ${{ parameters.Source }}
+          Schema: ${{ parameters.Schema }}
+          Table: ${{ parameters.Table }}
           
     # This step publishes the contents of the working directory to GitHub.
     - id: publish
@@ -65,7 +93,7 @@ spec:
       action: publish:github
       input:
         allowedHosts: ['github.com']
-        description: Backstage created repo [${{ parameters.name }}]
+        description: Backstage's created repo for [${{ parameters.Source }}].[${{ parameters.Schema }}].[${{ parameters.Table }}]
         repoUrl: ${{ parameters.repoUrl }}
 
     # The final step is to register our new component in the catalog.
