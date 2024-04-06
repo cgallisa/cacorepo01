@@ -24,22 +24,22 @@ spec:
           description: Usually an application name or database name
           maxLength: 30
           default: Portico
-              enum:
-                - Amisys
-                - Portico
-                - UMV
-                - Xcelys
+            enum:
+              - Amisys
+              - Portico
+              - UMV
+              - Xcelys
         Schema:
           title: Schema Name
           type: string
           description: Usually a schema name in the source database
           maxLength: 30
           default: PORTOWN
-              enum:
-                - AMIOWN
-                - PORTOWN
-                - Members
-                - DORIS
+            enum:
+              - AMIOWN
+              - PORTOWN
+              - Members
+              - DORIS
           ui:autofocus: true
           ui:options:
             rows: 5
