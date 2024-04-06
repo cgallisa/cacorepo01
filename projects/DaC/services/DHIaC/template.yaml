@@ -51,11 +51,14 @@ spec:
           
     - id: fetch-docs
       name: Fetch Docs
-      action: fetch:plain
+      action: fetch:template
       input:
         targetPath: ./docs
-        url: https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DHIaC/content/docs/
-        
+        url: ./docs
+        # url: https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DHIaC/content/docs/
+        values:
+          name: ${{ parameters.name }}
+          
     # This step publishes the contents of the working directory to GitHub.
     - id: publish
       name: Publish
