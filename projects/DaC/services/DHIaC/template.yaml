@@ -23,7 +23,7 @@ spec:
           type: string
           description: Usually an application name or database name
           maxLength: 30
-          default: Portico
+          # default: Portico
             enum:
               - Amisys
               - Portico
