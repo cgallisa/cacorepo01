@@ -40,7 +40,7 @@ metadata:
   description: Centene's Snowflake Platform
 spec:
   type: database
-  owner: Team-Skynet
+  owner: skynet_team
   system: Snowflake-Portico-System
 ---
 apiVersion: backstage.io/v1alpha1
@@ -50,7 +50,7 @@ metadata:
   description: Oracle Platform
 spec:
   type: database
-  owner: Team-DBA
+  owner: dba_team
   system: Portico-Application-System
 ---
 ---
@@ -61,14 +61,32 @@ metadata:
   description: CDC Replication Tool from Informatica Data Management Cloud (IDMC), Mass Ingestion (MI) service.
 spec:
   type: Tool
-  owner: Team-Data-Governance
+  owner: dg_team
   system: Snowflake-Portico-System
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: ea_team
+  description: Enterprise Architecture Team provides "internal consulting" services across the enterprise.
 spec:
   type: team
   children: []
-
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: dba_team
+  description: DBA Team provides database platform enablement for Oracle, PostgreSQL, and Neo4j.
+spec:
+  type: team
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: skynet_team
+  description: Skynet Team provides platform enablement and cloud engineering expertise to the Centene Data Platform.
+spec:
+  type: team
+  children: []
