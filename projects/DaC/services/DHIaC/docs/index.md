@@ -7,12 +7,14 @@ Backstage `Create` service will ask the user for parameters, as shown below.
 
 ### Service Parameters
 Enter the service parameters, which specifies the source location of the table to be replicated:
+
 - `Source` ... usually an application name or database name where the table to be replicated resides.
 - `Schema` ... Schema name within the *source* stated above.
 - `Table` ... Name of the table to be replicated
 
 ### Repository Location
 The owner and repository name uniquely identifies the place in GitHub, where the generated code will be stored.
+
 - `Owner` ... the owner is the first token in GitHub's bread crumb string, top left corner of the screen.
 - `Repository Name` ... we suggest a unique name by concadenating *[source].[schema].[table]* parameters.
 
