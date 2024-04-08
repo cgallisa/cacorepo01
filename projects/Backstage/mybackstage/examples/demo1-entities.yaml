@@ -57,8 +57,8 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: IDMC Mass Ingestion
-  description: CDC Replication Tool from Informatica
+  name: IDMC-MI
+  description: CDC Replication Tool from Informatica Data Management Cloud (IDMC), Mass Ingestion (MI) service.
 spec:
   type: Tool
   owner: Team-Data-Governance
