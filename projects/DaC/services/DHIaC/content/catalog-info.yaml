@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: ${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}
   description: |
-    ${{ values.Description | dump }}
+    ${{ values.Description }}
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
