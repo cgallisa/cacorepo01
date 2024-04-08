@@ -31,9 +31,9 @@ metadata:
     Portico - Third Party Application for Provider Data Management.
   annotations:
     backstage.io/techdocs-ref: dir:.
-    tags:
-      - structured
-      - centene
+  tags:
+    - structured
+    - centene
 spec:
   owner: user:guest
   domain: Provider-Domain
