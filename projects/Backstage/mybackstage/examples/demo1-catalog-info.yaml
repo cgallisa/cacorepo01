@@ -17,6 +17,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
 spec:
   owner: user:guest
+  domain: Provider-Domain
   lifecycle: POC
 ---
 apiVersion: backstage.io/v1alpha1
