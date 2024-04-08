@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.name | dump }}
-  description: This table is ingested from ${{ values.name | dump }} to EDH
+  name: ${{ values.Source | dump }}.${{ values.Schema | dump }}.${{ values.Table | dump }}
+  description: ${{ values.Description | dump }}
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
