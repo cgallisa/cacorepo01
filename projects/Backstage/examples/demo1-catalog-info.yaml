@@ -17,6 +17,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
   tags:
     - structured
+    - centene
 spec:
   owner: user:guest
   domain: Provider-Domain
@@ -30,6 +31,9 @@ metadata:
     Portico - Third Party Application for Provider Data Management.
   annotations:
     backstage.io/techdocs-ref: dir:.
+    tags:
+    - structured
+    - centene
 spec:
   owner: user:guest
   domain: Provider-Domain
@@ -40,6 +44,9 @@ kind: Resource
 metadata:
   name: Snowflake
   description: Centene's Snowflake Platform
+  tags:
+    - structured
+    - third-party
 spec:
   type: database
   owner: skynet_team
@@ -50,17 +57,22 @@ kind: Resource
 metadata:
   name: Oracle
   description: Oracle Platform
+  tags:
+    - structured
+    - third-party
 spec:
   type: database
   owner: dba_team
   system: Portico-Application-System
----
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
   name: IDMC-MI
   description: CDC Replication Tool from Informatica Data Management Cloud (IDMC), Mass Ingestion (MI) service.
+  tags:
+    - replication
+    - third-party
 spec:
   type: Tool
   owner: dg_team
