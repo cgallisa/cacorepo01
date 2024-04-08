@@ -63,7 +63,7 @@ spec:
   type: Tool
   owner: Team-Data-Governance
   system: Snowflake-Portico-System
---
+---
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
