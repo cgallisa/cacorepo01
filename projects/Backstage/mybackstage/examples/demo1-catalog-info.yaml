@@ -1,0 +1,52 @@
+# --------------------------------------------------
+# sample Domain
+# --------------------------------------------------
+
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: Provider-Domain
+  description: Contains all systems managed under the Provider business domain.
+spec:
+  owner: guests
+
+# --------------------------------------------------
+# sample System
+# --------------------------------------------------
+
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: Portico-System
+  description: |
+    Portico - Snowflake Application
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  owner: user:guest
+  lifecycle: POC
+
+# --------------------------------------------------
+# sample Resource - Snowflake
+# --------------------------------------------------
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: Snowflake
+  description: Centene's Snowflake Platform
+spec:
+  type: database
+  owner: Team-Skynet
+  system: Portico-System
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: Oracle
+  description: Oracle Platform
+spec:
+  type: database
+  owner: Team-DBA
+  system: Portico-System
+
