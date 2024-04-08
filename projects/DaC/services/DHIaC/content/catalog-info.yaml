@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.Source | dump }}.${{ values.Schema | dump }}.${{ values.Table | dump }}
+  name: ${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}
   description: |
-    ${{ values.Description }}
+    ${{ values.Description | dump }}
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
