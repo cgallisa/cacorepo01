@@ -32,8 +32,8 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
     tags:
-    - structured
-    - centene
+      - structured
+      - centene
 spec:
   owner: user:guest
   domain: Provider-Domain
