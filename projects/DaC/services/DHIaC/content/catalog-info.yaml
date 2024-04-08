@@ -11,6 +11,8 @@ metadata:
     
   annotations:
     backstage.io/techdocs-ref: dir:.
+  tags:
+    - Structured
 spec:
   type: dataset
   owner: user:guest
