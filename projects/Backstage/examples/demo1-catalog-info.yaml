@@ -119,11 +119,19 @@ metadata:
 spec:
   memberOf: [ea_team]
 ---
-# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: guests
+spec:
+  type: team
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: dg_team
+  description: Data Governance Team ensures data is secure, private, accurate, available, and usable.
 spec:
   type: team
   children: []
