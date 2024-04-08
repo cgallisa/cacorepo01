@@ -13,6 +13,11 @@ metadata:
     backstage.io/techdocs-ref: dir:.
   tags:
     - structured
+  links:
+    - url: https://use6.dm-us.informaticacloud.com/mona/ingestion-dashboard
+      title: IDMC - Mass Ingestion Dashboard
+      icon: dashboard
+      type: admin-dashboard
 spec:
   type: dataset
   owner: user:guest
