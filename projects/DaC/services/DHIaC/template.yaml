@@ -101,6 +101,8 @@ spec:
           Source: ${{ parameters.Source }}
           Schema: ${{ parameters.Schema }}
           Table: ${{ parameters.Table }}
+          Name: ${{ parameters.Name }}
+          Description: ${{ parameters.Description }}
           
     - id: fetch-docs
       name: Fetch Docs
@@ -113,6 +115,8 @@ spec:
           Source: ${{ parameters.Source }}
           Schema: ${{ parameters.Schema }}
           Table: ${{ parameters.Table }}
+          Name: ${{ parameters.Name }}
+          Description: ${{ parameters.Description }}
           
     # This step publishes the contents of the working directory to GitHub.
     - id: publish
