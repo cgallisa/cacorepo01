@@ -18,6 +18,11 @@ metadata:
   tags:
     - structured
     - centene
+  links:
+    - url: https://use6.dm-us.informaticacloud.com/mona/ingestion-dashboard
+      title: IDMC - Mass Ingestion Dashboard
+      icon: dashboard
+      type: admin-dashboard
 spec:
   owner: user:guest
   domain: Provider-Domain
