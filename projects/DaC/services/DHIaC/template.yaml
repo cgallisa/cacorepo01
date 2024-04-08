@@ -54,9 +54,9 @@ spec:
           default: TABLE_YYYYMMDD_HHMI
           ui:autofocus: true
         Name:
-          title: Short descriptive name
+          title: Short Name
           type: string
-          description: A short but descriptive name.
+          description: Short and easy to remember.
           maxLength: 30
           default: Portico's PROVIDER table.
           ui:autofocus: true
@@ -69,17 +69,7 @@ spec:
           ui:autofocus: true
           ui:widget: textarea
           ui:options:
-            rows: 10
-          ui:help: 'Hint: Make it strong!'
-          ui:placeholder: |
-            apiVersion: backstage.io/v1alpha1
-              kind: Component
-              metadata:
-                name: backstage
-              spec:
-                type: library
-                owner: CNCF
-                lifecycle: experimental
+            rows: 3
     - title: Repository Location
       required:
         - repoUrl
