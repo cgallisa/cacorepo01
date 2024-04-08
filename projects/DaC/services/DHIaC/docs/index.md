@@ -8,9 +8,9 @@ Backstage `Create` service will ask the user for parameters, as shown below.
 ### Service Parameters
 Enter the service parameters, which specifies the source location of the table to be replicated:
 
-- `Source` ... usually an application name or database name where the table to be replicated resides.
+- `Source` ... usually an application name or database name where the table to be replicated resides. Best practice calls for aligning to `source names in Alation`.
 - `Schema` ... Schema name within the *source* stated above.
-- `Table` ... Name of the table to be replicated
+- `Table` ... Name of the table to be replicated.
 
 ### Repository Location
 The owner and repository name uniquely identifies the place in GitHub, where the generated code will be stored.
@@ -24,7 +24,7 @@ All parameters will be displayed on the screen for review. Press the `CREATE` bu
 ---
 
 ## Generated Code
-Upon successful execution of the code, this service will create the following:
+Upon successful execution of the service, Backstage will create the following files in the repository:
 
 - `code-DHIaC.json` ... specification for instantiating the replication job.
 
