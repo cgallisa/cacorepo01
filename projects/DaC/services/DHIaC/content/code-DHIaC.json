@@ -1,3 +1,5 @@
 {
-${{ values.name }}
+  "FullyQualifiedSource": "${{ values.Source | dump }}.${{ values.Schema | dump }}.${{ values.Table | dump }}",
+  "Name": ${{ values.Name }},
+  "Description": ${{ values.Description }}
 }
