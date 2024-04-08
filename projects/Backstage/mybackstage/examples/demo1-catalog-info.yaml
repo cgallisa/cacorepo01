@@ -10,15 +10,28 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: Portico-System
+  name: Snowflake-Portico-System
   description: |
-    Portico - Snowflake Application
+    Portico - Snowflake Application with schemas for RAW, WORK, TARGET, and ACCESS.
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
   owner: user:guest
   domain: Provider-Domain
-  lifecycle: POC
+  lifecycle: Production
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: Portico-Application-System
+  description: |
+    Portico - Third Party Application for Provider Data Management.
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  owner: user:guest
+  domain: Provider-Domain
+  lifecycle: Production
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
@@ -28,7 +41,7 @@ metadata:
 spec:
   type: database
   owner: Team-Skynet
-  system: Portico-System
+  system: Snowflake-Portico-System
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
@@ -38,4 +51,4 @@ metadata:
 spec:
   type: database
   owner: Team-DBA
-  system: Portico-System
+  system: Portico-Application-System
