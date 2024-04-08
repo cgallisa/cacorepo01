@@ -1,7 +1,4 @@
-# --------------------------------------------------
-# sample Domain
-# --------------------------------------------------
-
+---
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
@@ -9,11 +6,7 @@ metadata:
   description: Contains all systems managed under the Provider business domain.
 spec:
   owner: guests
-
-# --------------------------------------------------
-# sample System
-# --------------------------------------------------
-
+---
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
@@ -25,11 +18,7 @@ metadata:
 spec:
   owner: user:guest
   lifecycle: POC
-
-# --------------------------------------------------
-# sample Resource - Snowflake
-# --------------------------------------------------
-
+---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
@@ -39,7 +28,7 @@ spec:
   type: database
   owner: Team-Skynet
   system: Portico-System
-
+---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
@@ -49,4 +38,3 @@ spec:
   type: database
   owner: Team-DBA
   system: Portico-System
-
