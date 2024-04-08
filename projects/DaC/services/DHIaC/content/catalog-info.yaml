@@ -12,7 +12,11 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
-  type: service
+  type: dataset
   owner: user:guest
-  system: Portico
-  lifecycle: POC
+  system: Snowflake-Portico-System
+  dependsOn:
+    - resource:Oracle
+    - resource:Snowflake
+    - resource:IDMC-MI
+  lifecycle: DHIaC V1.0
