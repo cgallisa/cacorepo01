@@ -1,5 +1,5 @@
 {
-  "FullyQualifiedSource": "${{ values.Source | dump }}.${{ values.Schema | dump }}.${{ values.Table | dump }}",
-  "Name": ${{ values.Name }},
-  "Description": ${{ values.Description }}
+  "FullyQualifiedSource": "${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}",
+  "Name": "${{ values.Name }}",
+  "Description": "${{ values.Description }}"
 }
