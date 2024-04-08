@@ -19,6 +19,8 @@ spec:
         - Source
         - Schema
         - Table
+        - Name
+        - Description
       properties:
         Source:
           title: Source Name
@@ -51,6 +53,33 @@ spec:
           maxLength: 30
           default: TABLE_YYYYMMDD_HHMI
           ui:autofocus: true
+        Name:
+          title: Short descriptive name
+          type: string
+          description: A short but descriptive name.
+          maxLength: 30
+          default: Portico's PROVIDER table.
+          ui:autofocus: true
+        Description:
+          title: Description
+          type: string
+          description: Fair description of the service, component, source, target, etc.
+          maxLength: 300
+          default: Component created by Backstage service DHIaC, to replicate a table to the EDH system.
+          ui:autofocus: true
+          ui:widget: textarea
+          ui:options:
+            rows: 10
+          ui:help: 'Hint: Make it strong!'
+          ui:placeholder: |
+            apiVersion: backstage.io/v1alpha1
+              kind: Component
+              metadata:
+                name: backstage
+              spec:
+                type: library
+                owner: CNCF
+                lifecycle: experimental
     - title: Repository Location
       required:
         - repoUrl
