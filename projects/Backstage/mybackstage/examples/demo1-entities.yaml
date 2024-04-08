@@ -52,3 +52,14 @@ spec:
   type: database
   owner: Team-DBA
   system: Portico-Application-System
+---
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: IDMC Mass Ingestion
+  description: CDC Replication Tool from Informatica
+spec:
+  type: Tool
+  owner: Team-Data-Governance
+  system: Snowflake-Portico-System
