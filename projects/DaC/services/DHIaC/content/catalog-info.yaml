@@ -19,11 +19,11 @@ metadata:
       icon: dashboard
       type: admin-dashboard
 spec:
-  type: dataset
+  type: DHIaC
   owner: user:guest
   system: Snowflake-Portico-System
   dependsOn:
     - resource:Oracle
     - resource:Snowflake
     - resource:IDMC-MI
-  lifecycle: DHIaC V1.0
+  lifecycle: V1.0
