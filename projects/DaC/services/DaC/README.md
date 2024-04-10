@@ -1,7 +1,7 @@
-# DMaC
-Data Metric as Code - Service Template
+# DaC
+Data as Code - Service Template
 
-This service creates a data-quality-metric in Centene's data observability tool (Bigeye).
+This service creates other DaC templates, to be registered in Backstage. It creates skeleton files, meaning not all template details such as parameters and steps are created. Files such as `code-XXX.json` are very specific to the service we want to instantiate and best practices we want to enforce.
 
 ## Content
 
