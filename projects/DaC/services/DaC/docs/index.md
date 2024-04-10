@@ -26,7 +26,7 @@ All parameters will be displayed on the screen for review. Press the `CREATE` bu
 ## Generated Code
 Upon successful execution of the service, Backstage will create the following files in the repository:
 
-- `template.yaml` ... specification for Backstage registration and behaviour, including parameters and steps, similar to the one below...
+- `catalog-info.yaml` ... specification for Backstage registration and behaviour, including parameters and steps, similar to the one below...
 
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
