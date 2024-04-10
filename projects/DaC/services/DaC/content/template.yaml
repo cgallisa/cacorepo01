@@ -1,0 +1,47 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: ${{ Code }}
+  title: ${{ Title }} 
+  description: ${{ Description }}
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - recommended
+# put other tags here as required
+spec:
+  owner: user:guest
+  type: DaC
+  parameters:
+    - title: Service Parameters
+      required:
+        - Code
+        - Title
+        - Description
+      properties:
+        Code:
+          title: Code
+          type: string
+          description: Each code represents an XXX-as-Code service, such as DaC, DHIaC, DMaC, DPaC, etc.
+          maxLength: 20
+          default: XXXaC
+          ui:autofocus: true
+# Put other parameters here as required
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./content
+        values:
+          Code: ${{ parameters.Code }}
+          Title: ${{ parameters.Title }}
+          Description: ${{ parameters.Description }}
+# Put other steps here as required
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
