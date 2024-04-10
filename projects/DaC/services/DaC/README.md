@@ -1,7 +1,7 @@
 # DaC
 Data as Code - Template of Templates
 
-This service creates other DaC templates (i.e. for DHIaC, DMaC, DPaC, etc.), to be registered in Backstage. It creates skeleton files, meaning not all template details such as parameters and steps are created. See TechDocs for full details.
+This service creates other DaC templates (i.e. for DHIaC, DMaC, DPaC, etc.), to be registered in Backstage. It creates skeleton files, meaning not all template details such as parameters and steps are created. See `TechDocs` for full details.
 
 ## Content
 
