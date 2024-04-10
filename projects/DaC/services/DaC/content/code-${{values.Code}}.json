@@ -1,4 +1,4 @@
 {
-  "sample": "${{ Title }}"
+  "sample": "${{ values.Title }}"
   # put service XXX-as-Code here
 }
