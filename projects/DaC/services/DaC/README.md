@@ -11,4 +11,4 @@ This service creates other DaC templates (i.e. for DHIaC, DMaC, DPaC, etc.), to 
   
 - `mkdocs.yml` ... contains specs for the rendering of this teamplate's documentation, within Backsatge Docs.
 
-- `template.yaml` ... contains specs for Backstage registration and for the template to behave. When invoked by a user, it includes rendering of parms, execution of steps, etc.
+- `catalog-info.yaml` ... contains specs for Backstage registration and for the template to behave. When invoked by a user, it includes rendering of parms, execution of steps, etc.
