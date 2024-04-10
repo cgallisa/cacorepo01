@@ -38,6 +38,7 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
+# sample tag
     - recommended
 # put other tags here as required
 spec:
@@ -47,9 +48,8 @@ spec:
     - title: Service Parameters
       required:
         - Code
-        - Title
-        - Description
       properties:
+# sample parameter
         Code:
           title: Code
           type: string
@@ -59,6 +59,7 @@ spec:
           ui:autofocus: true
 # Put other parameters here as required
   steps:
+# sample step
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
@@ -66,8 +67,6 @@ spec:
         url: ./content
         values:
           Code: ${{ parameters.Code }}
-          Title: ${{ parameters.Title }}
-          Description: ${{ parameters.Description }}
 # Put other steps here as required
   output:
     links:
