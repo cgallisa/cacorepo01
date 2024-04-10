@@ -32,9 +32,9 @@ Upon successful execution of the service, Backstage will create the following fi
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: ${{ Code }}
-  title: ${{ Title }} 
-  description: ${{ Description }}
+  name: ${{ values.Code }}
+  title: ${{ values.Title }} 
+  description: ${{ values.Description }}
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
@@ -87,9 +87,9 @@ This is the technical documentation for the ${{ Code }} service. It was generate
 ## Source - Explicit Parameters
 As entered by the Backstage user:
 
-- `Code` ${{ Code }}
-- `Title` ${{ Title }}
-- `Description` ${{ Description }}
+- `Code` ${{ values.Code }}
+- `Title` ${{ values.Title }}
+- `Description` ${{ values.Description }}
 
 # Put more documentation here
 
