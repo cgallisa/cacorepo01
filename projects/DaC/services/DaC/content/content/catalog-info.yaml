@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ^{{ values.Source }}
+  description: |
+    XXX
+    *Note: see TechDocs for full documentation
+    
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - structured
+spec:
+  type: ${{ values.Code }}
+  owner: user:guest
+  lifecycle: ${{ values.Code }} V1.0
