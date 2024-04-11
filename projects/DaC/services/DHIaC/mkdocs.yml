@@ -1,4 +1,4 @@
-site_name: 'DHIaC'
+site_name: 'Overview'
 nav:
   - Home: index.md
 plugins:
