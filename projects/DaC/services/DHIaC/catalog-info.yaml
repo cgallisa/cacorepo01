@@ -8,6 +8,8 @@ metadata:
     backstage.io/techdocs-ref: dir:.
   tags:
     - easy
+    - data
+    - replication
     
 spec:
   owner: user:guest
