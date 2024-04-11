@@ -81,7 +81,7 @@ spec:
       action: fetch:template
       input:
         targetPath: ./docs
-        url: ./docs
+        url: ./content/docs
         values:
           Code: ${{ parameters.Code }}
           Title: ${{ parameters.Title }}
@@ -92,7 +92,7 @@ spec:
       action: fetch:template
       input:
         targetPath: ./content
-        url: ./content
+        url: ./content/content
         values:
           Code: ${{ parameters.Code }}
           Title: ${{ parameters.Title }}
