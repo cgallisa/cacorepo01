@@ -1,0 +1,147 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: DMaC
+  title: Data Metric as Code - V1.0
+  description: A service to create a data quality metric in the standard platform (i.e. Bigeye)
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - recommended
+    
+spec:
+  owner: user:guest
+  type: DaC
+
+  # These parameters are used to generate the input form in the frontend, and are
+  # used to gather input data for the execution of the template.
+  parameters:
+    - title: Service Parameters
+      required:
+        - Source
+        - Schema
+        - Table
+        - Name
+        - Description
+      properties:
+      
+        Source:
+          title: Source Name
+          type: string
+          description: Usually an application name or database name.
+          maxLength: 30
+          default: Portico
+          enum:
+            - Amisys
+            - Portico
+            - UMV
+            - Xcelys
+          ui:autofocus: true
+          
+        Schema:
+          title: Schema Name
+          type: string
+          description: Schema name in the *source* database.
+          maxLength: 30
+          default: PORTOWN
+          enum:
+            - AMIOWN
+            - PORTOWN
+            - Members
+            - DORIS
+          ui:autofocus: true
+          
+        Table:
+          title: Table Name
+          type: string
+          description: Name of the table to be replicated.
+          maxLength: 30
+          default: TABLE_YYYYMMDD_HHMI
+          ui:autofocus: true
+          
+        Name:
+          title: Short Name
+          type: string
+          description: Short and easy to remember.
+          maxLength: 30
+          default: Portico's PROVIDER table.
+          ui:autofocus: true
+          
+        Description:
+          title: Description
+          type: string
+          description: Fair description of the service, component, source, target, etc.
+          maxLength: 300
+          default: Component created by Backstage service DMaC, to specify a data quality rule (metric).
+          ui:autofocus: true
+          ui:widget: textarea
+          ui:options:
+            rows: 3
+            
+    - title: Repository Location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+  # These steps are executed in the scaffolder backend, using data that we gathered
+  # via the parameters above.
+  steps:
+    # Each step executes an action, in this case one templates files into the working directory.
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./content
+        values:
+          Source: ${{ parameters.Source }}
+          Schema: ${{ parameters.Schema }}
+          Table: ${{ parameters.Table }}
+          Name: ${{ parameters.Name }}
+          Description: ${{ parameters.Description }}
+          
+    - id: fetch-docs
+      name: Fetch Docs
+      action: fetch:template
+      input:
+        targetPath: ./docs
+        url: ./docs
+        # url: https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DMaC/content/docs/
+        values:
+          Source: ${{ parameters.Source }}
+          Schema: ${{ parameters.Schema }}
+          Table: ${{ parameters.Table }}
+          Name: ${{ parameters.Name }}
+          Description: ${{ parameters.Description }}
+          
+    # This step publishes the contents of the working directory to GitHub.
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: Backstage's created repo for [${{ parameters.Source }}].[${{ parameters.Schema }}].[${{ parameters.Table }}]
+        repoUrl: ${{ parameters.repoUrl }}
+
+    # The final step is to register our new component in the catalog.
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+  # Outputs are displayed to the user after a successful execution of the template.
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
