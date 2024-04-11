@@ -36,7 +36,7 @@ spec:
           title: Title
           type: string
           description: Title to be shown in Backstage.
-          maxLength: 30
+          maxLength: 50
           default: XXX as Code - V1.0
           ui:autofocus: true
           
