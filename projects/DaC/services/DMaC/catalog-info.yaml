@@ -7,7 +7,9 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
-    - recommended
+    - easy
+    - data
+    - quality
     
 spec:
   owner: user:guest
