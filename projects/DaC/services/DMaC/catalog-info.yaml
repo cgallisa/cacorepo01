@@ -65,7 +65,7 @@ spec:
           title: Short Name
           type: string
           description: Short and easy to remember.
-          maxLength: 30
+          maxLength: 50
           default: Portico's PROVIDER table.
           ui:autofocus: true
           
