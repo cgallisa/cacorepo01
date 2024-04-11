@@ -8,6 +8,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
   tags:
     - sme
+    - data
     
 spec:
   owner: user:guest
