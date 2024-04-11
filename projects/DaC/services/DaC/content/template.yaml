@@ -28,7 +28,7 @@ spec:
           ui:autofocus: true
 # Put other parameters here as required
   steps:
-# sample step
+    # Each step executes an action, in this case one templates files into the working directory.
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
@@ -36,7 +36,34 @@ spec:
         url: ./content
         values:
           Code: ${{ parameters.Code }}
-# Put other steps here as required
+          
+    - id: fetch-docs
+      name: Fetch Docs
+      action: fetch:template
+      input:
+        targetPath: ./docs
+        url: ./docs
+        values:
+          Code: ${{ parameters.Code }}
+          
+    # This step publishes the contents of the working directory to GitHub.
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: Backstage's created repo for [${{ parameters.Code }}]
+        repoUrl: ${{ parameters.repoUrl }}
+
+    # The final step is to register our new component in the catalog.
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/template.yaml'
+
+  # Outputs are displayed to the user after a successful execution of the template.
   output:
     links:
       - title: Repository
