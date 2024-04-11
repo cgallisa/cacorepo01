@@ -86,6 +86,17 @@ spec:
           Code: ${{ parameters.Code }}
           Title: ${{ parameters.Title }}
           Description: ${{ parameters.Description }}
+
+    - id: fetch-content
+      name: Fetch Content
+      action: fetch:template
+      input:
+        targetPath: ./content
+        url: ./content
+        values:
+          Code: ${{ parameters.Code }}
+          Title: ${{ parameters.Title }}
+          Description: ${{ parameters.Description }}
           
     # This step publishes the contents of the working directory to GitHub.
     - id: publish
