@@ -1,0 +1,29 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}
+  description: |
+    ${{ values.Name }}
+    
+    ${{ values.Description }}
+    
+    *Note: see TechDocs for full documentation
+    
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - structured
+  links:
+    - url: https://app.bigeye.com/w/142/dashboard
+      title: Bigeye Data Observability
+      icon: dashboard
+      type: admin-dashboard
+spec:
+  type: DaC
+  owner: user:guest
+  system: Snowflake-Portico-System
+  dependsOn:
+    - resource:Oracle
+    - resource:Snowflake
+    - resource:IDMC-MI
+  lifecycle: DMaC V1.0
