@@ -1,5 +1,5 @@
-site_name: 'Overview'
+site_name: 'Content'
 nav:
-  - Home: index.md
+  - Overview: index.md
 plugins:
   - techdocs-core
