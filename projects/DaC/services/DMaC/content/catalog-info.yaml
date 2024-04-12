@@ -27,3 +27,7 @@ spec:
     - resource:Snowflake
     - resource:IDMC-MI
   lifecycle: DMaC V1.0
+  dependsOn:
+    - resource:Bigeye
+  subcomponentOf:
+    - component:${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}
