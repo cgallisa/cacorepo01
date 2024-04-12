@@ -22,10 +22,6 @@ spec:
   type: DaC
   owner: user:guest
   system: Snowflake-Portico-System
-  dependsOn:
-    - resource:Oracle
-    - resource:Snowflake
-    - resource:IDMC-MI
   lifecycle: DMaC V1.0
   dependsOn:
     - resource:Bigeye
