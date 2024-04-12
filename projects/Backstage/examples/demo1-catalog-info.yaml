@@ -73,6 +73,19 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
+  name: Bigeye
+  description: Bigeye Data Observability Platform
+  tags:
+    - quality
+    - third-party
+spec:
+  type: tool
+  owner: dg_team
+  system: Portico-Application-System
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
   name: IDMC-MI
   description: CDC Replication Tool from Informatica Data Management Cloud (IDMC), Mass Ingestion (MI) service.
   tags:
@@ -80,7 +93,7 @@ metadata:
     - third-party
 spec:
   type: Tool
-  owner: dg_team
+  owner: INFRA_team
   system: Snowflake-Portico-System
 ---
 apiVersion: backstage.io/v1alpha1
@@ -88,6 +101,15 @@ kind: Group
 metadata:
   name: ea_team
   description: Enterprise Architecture Team provides "internal consulting" services across the enterprise.
+spec:
+  type: team
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: INFRA_team
+  description: Informatica Admin Team provides provides Admin services for several Informatica products.
 spec:
   type: team
   children: []
