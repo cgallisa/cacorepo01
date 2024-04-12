@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}
+  name: tbl-${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}
   description: |
     ${{ values.Name }}
     
