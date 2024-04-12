@@ -10,7 +10,12 @@ metadata:
     - easy
     - data
     - quality
-    
+  links:
+    - url: https://centene.bigeye.com/w/2/dashboard
+      title: Bigeye Dashboard
+      icon: dashboard
+      type: admin-dashboard
+
 spec:
   owner: user:guest
   type: DaC
