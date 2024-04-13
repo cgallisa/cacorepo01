@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tbl-${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}
+  description: |
+    ${{ values.Name }}
+    
+    ${{ values.Description }}
+    
+    *Note: see TechDocs for full documentation
+    
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - structured
+    - data
+  links:
+    - url: https://use6.dm-us.informaticacloud.com/mona/ingestion-dashboard
+      title: IDMC - Mass Ingestion Dashboard
+      icon: dashboard
+      type: admin-dashboard
+spec:
+  type: DaC
+  owner: user:guest
+  system: Snowflake-Portico-System
+  dependsOn:
+    - resource:Oracle
+    - resource:Snowflake
+    - resource:IDMC-MI
+  lifecycle: DHIaC V1.0

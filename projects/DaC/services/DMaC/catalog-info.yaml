@@ -12,7 +12,7 @@ metadata:
     - quality
   links:
     - url: https://centene.bigeye.com/w/2/dashboard
-      title: Bigeye Dashboard
+      title: Bigeye
       icon: dashboard
       type: admin-dashboard
 
@@ -31,7 +31,7 @@ spec:
         - Name
         - Description
       properties:
-      
+
         Source:
           title: Source Name
           type: string
@@ -44,7 +44,7 @@ spec:
             - UMV
             - Xcelys
           ui:autofocus: true
-          
+
         Schema:
           title: Schema Name
           type: string
@@ -57,7 +57,7 @@ spec:
             - Members
             - DORIS
           ui:autofocus: true
-          
+
         Table:
           title: Table Name
           type: string
@@ -65,7 +65,7 @@ spec:
           maxLength: 30
           default: TABLE_YYYYMMDD_HHMI
           ui:autofocus: true
-          
+
         Name:
           title: Short Name
           type: string
@@ -73,7 +73,7 @@ spec:
           maxLength: 50
           default: DQ Rules for Portico's PROVIDER table.
           ui:autofocus: true
-          
+
         Description:
           title: Description
           type: string
@@ -84,7 +84,7 @@ spec:
           ui:widget: textarea
           ui:options:
             rows: 3
-            
+
     - title: Repository Location
       required:
         - repoUrl
@@ -112,7 +112,7 @@ spec:
           Table: ${{ parameters.Table }}
           Name: ${{ parameters.Name }}
           Description: ${{ parameters.Description }}
-          
+
     - id: fetch-docs
       name: Fetch Docs
       action: fetch:template
@@ -126,7 +126,7 @@ spec:
           Table: ${{ parameters.Table }}
           Name: ${{ parameters.Name }}
           Description: ${{ parameters.Description }}
-          
+
     # This step publishes the contents of the working directory to GitHub.
     - id: publish
       name: Publish

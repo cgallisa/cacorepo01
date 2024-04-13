@@ -1,20 +1,21 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: DHIaC
-  title: Data Hub Ingestion as Code - V1.0
-  description: A service to ingest a table from a source application (i.e. Portico) into EDH target Application (i.e. Snowflake schema for Portico)
+  name: DTaC
+  title: Data Trans. as Code - V1.0
+  description: A service to transform data.
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
-    - easy
     - data
-    - replication
+    - integration
+    - transformation
+    - elt
   links:
-    - url: https://use6.dm-us.informaticacloud.com/mona/ingestion-dashboard
-      title: IDMC
-      icon: dashboard
-      type: admin-dashboard
+    - url: https://docs.getdbt.com/docs/introduction
+      title: DBT
+      icon: documentation
+      type: website
 
 spec:
   owner: user:guest
@@ -28,6 +29,7 @@ spec:
         - Source
         - Schema
         - Table
+        - Step
         - Name
         - Description
       properties:
@@ -66,6 +68,14 @@ spec:
           default: TABLE_YYYYMMDD_HHMI
           ui:autofocus: true
 
+        Step:
+          title: Transformation step
+          type: string
+          description: Sequence of steps to complete data transformation.
+          maxLength: 2
+          default: 1
+          ui:autofocus: true
+
         Name:
           title: Short Name
           type: string
@@ -79,7 +89,7 @@ spec:
           type: string
           description: Fair description of the service, component, source, target, etc.
           maxLength: 300
-          default: Component created by Backstage service DHIaC, to replicate a table to the EDH system.
+          default: Component created by Backstage service DTaC, to replicate a table to the EDH system.
           ui:autofocus: true
           ui:widget: textarea
           ui:options:
@@ -110,6 +120,7 @@ spec:
           Source: ${{ parameters.Source }}
           Schema: ${{ parameters.Schema }}
           Table: ${{ parameters.Table }}
+          Step: ${{ parameters.Step }}
           Name: ${{ parameters.Name }}
           Description: ${{ parameters.Description }}
 
@@ -119,11 +130,12 @@ spec:
       input:
         targetPath: ./docs
         url: ./docs
-        # url: https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DHIaC/content/docs/
+        # url: https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DTaC/content/docs/
         values:
           Source: ${{ parameters.Source }}
           Schema: ${{ parameters.Schema }}
           Table: ${{ parameters.Table }}
+          Step: ${{ parameters.Step }}
           Name: ${{ parameters.Name }}
           Description: ${{ parameters.Description }}
 
