@@ -2,14 +2,13 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: DMaC
-  title: Data Metric as Code - V1.0
+  title: Data Metric - V1.0
   description: A service to create a data quality metric in the standard platform (i.e. Bigeye)
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
-    - easy
     - data
-    - quality
+    - recommended
   links:
     - url: https://centene.bigeye.com/w/2/dashboard
       title: Bigeye
@@ -23,7 +22,7 @@ spec:
   # These parameters are used to generate the input form in the frontend, and are
   # used to gather input data for the execution of the template.
   parameters:
-    - title: Service Parameters
+    - title: ID
       required:
         - Source
         - Schema
@@ -65,6 +64,12 @@ spec:
           maxLength: 30
           default: TABLE_YYYYMMDD_HHMI
           ui:autofocus: true
+
+    - title: Metadata
+      required:
+        - Name
+        - Description
+      properties:
 
         Name:
           title: Short Name

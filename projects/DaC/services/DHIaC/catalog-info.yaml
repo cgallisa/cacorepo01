@@ -2,14 +2,13 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: DHIaC
-  title: Data Hub Ingestion as Code - V1.0
+  title: Data Hub Ingestion - V1.0
   description: A service to ingest a table from a source application (i.e. Portico) into EDH target Application (i.e. Snowflake schema for Portico)
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
-    - easy
+    - recommended
     - data
-    - replication
   links:
     - url: https://use6.dm-us.informaticacloud.com/mona/ingestion-dashboard
       title: IDMC
@@ -23,13 +22,11 @@ spec:
   # These parameters are used to generate the input form in the frontend, and are
   # used to gather input data for the execution of the template.
   parameters:
-    - title: Service Parameters
+    - title: ID
       required:
         - Source
         - Schema
         - Table
-        - Name
-        - Description
       properties:
 
         Source:
@@ -65,6 +62,12 @@ spec:
           maxLength: 30
           default: TABLE_YYYYMMDD_HHMI
           ui:autofocus: true
+
+    - title: Metadata
+      required:
+        - Name
+        - Description
+      properties:
 
         Name:
           title: Short Name

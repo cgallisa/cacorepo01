@@ -97,6 +97,19 @@ spec:
   system: Snowflake-Portico-System
 ---
 apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: DBT
+  description: Database Transformation Tool (DBT).
+  tags:
+    - transformation
+    - third-party
+spec:
+  type: Tool
+  owner: INFRA_team
+  system: Snowflake-Portico-System
+---
+apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: ea_team

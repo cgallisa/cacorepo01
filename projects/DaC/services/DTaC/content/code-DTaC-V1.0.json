@@ -1,5 +1,7 @@
 {
   "FullyQualifiedSource": "${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}",
+  "Step": "${{ values.Step }}"
   "Name": "${{ values.Name }}",
-  "Description": "${{ values.Description }}"
+  "Description": "${{ values.Description }}",
+  "Transformation": "${{ values.Trans }}"
 }

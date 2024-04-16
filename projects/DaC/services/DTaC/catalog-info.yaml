@@ -2,15 +2,13 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: DTaC
-  title: Data Trans. as Code - V1.0
+  title: Data Transformation - V1.0
   description: A service to transform data.
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
     - data
-    - integration
-    - transformation
-    - elt
+    - recommended
   links:
     - url: https://docs.getdbt.com/docs/introduction
       title: DBT
@@ -24,14 +22,12 @@ spec:
   # These parameters are used to generate the input form in the frontend, and are
   # used to gather input data for the execution of the template.
   parameters:
-    - title: Service Parameters
+    - title: ID
       required:
         - Source
         - Schema
         - Table
         - Step
-        - Name
-        - Description
       properties:
 
         Source:
@@ -70,18 +66,24 @@ spec:
 
         Step:
           title: Transformation step
-          type: string
+          type: number
           description: Sequence of steps to complete data transformation.
           maxLength: 2
           default: 1
           ui:autofocus: true
+
+    - title: Metadata
+      required:
+        - Name
+        - Description
+      properties:
 
         Name:
           title: Short Name
           type: string
           description: Short and easy to remember.
           maxLength: 50
-          default: Portico's PROVIDER table.
+          default: Portico's PRACTITIONER transformation.
           ui:autofocus: true
 
         Description:
@@ -89,11 +91,27 @@ spec:
           type: string
           description: Fair description of the service, component, source, target, etc.
           maxLength: 300
-          default: Component created by Backstage service DTaC, to replicate a table to the EDH system.
+          default: Component created by Backstage service DTaC, to transform data for the Foundation area.
           ui:autofocus: true
           ui:widget: textarea
           ui:options:
             rows: 3
+
+    - title: Transformation
+      required:
+        - Trans
+      properties:
+
+        Trans:
+          title: Transformation
+          type: string
+          description: SQL logic for achieving the desired data transformation.
+          maxLength: 300
+          default: insert into <target table> select * from <source table>;
+          ui:autofocus: true
+          ui:widget: textarea
+          ui:options:
+            rows: 10
 
     - title: Repository Location
       required:
