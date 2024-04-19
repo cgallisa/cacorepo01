@@ -1,29 +1,28 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: tx-${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}.${{ values.Step }}
+  name: dq-${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}
   description: |
     ${{ values.Name }}
-
+    
     ${{ values.Description }}
-
+    
     *Note: see TechDocs for full documentation
-
+    
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
-    - data
-    - transformation
+    - structured
   links:
-    - url: https://docs.getdbt.com/docs/introduction
-      title: DBT
-      icon: documentation
-      type: website
+    - url: https://app.bigeye.com/w/142/dashboard
+      title: Bigeye Data Observability
+      icon: dashboard
+      type: admin-dashboard
 spec:
   type: DaC
   owner: user:guest
   system: Snowflake-Portico-System
-  lifecycle: DTaC V1.0
+  lifecycle: DMaC V1.0
   dependsOn:
-    - resource:DBT
+    - resource:Bigeye
   subcomponentOf: tbl-${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}

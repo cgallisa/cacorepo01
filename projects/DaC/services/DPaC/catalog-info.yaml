@@ -1,17 +1,17 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: DHIaC
-  title: Data Hub Ingestion - V1.3
-  description: A service to ingest a table from a source application (i.e. Portico) into EDH target Application (i.e. Snowflake schema for Portico)
+  name: DMaC
+  title: Data Metric - V1.0
+  description: A service to create a data quality metric in the standard platform (i.e. Bigeye)
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
-    - recommended
     - data
+    - recommended
   links:
-    - url: https://use6.dm-us.informaticacloud.com/mona/ingestion-dashboard
-      title: IDMC
+    - url: https://centene.bigeye.com/w/2/dashboard
+      title: Bigeye
       icon: dashboard
       type: admin-dashboard
 
@@ -27,6 +27,8 @@ spec:
         - Source
         - Schema
         - Table
+        - Name
+        - Description
       properties:
 
         Source:
@@ -74,7 +76,7 @@ spec:
           type: string
           description: Short and easy to remember.
           maxLength: 50
-          default: Portico's PROVIDER table.
+          default: DQ Rules for Portico's PROVIDER table.
           ui:autofocus: true
 
         Description:
@@ -82,7 +84,7 @@ spec:
           type: string
           description: Fair description of the service, component, source, target, etc.
           maxLength: 300
-          default: Component created by Backstage service DHIaC, to replicate a table to the EDH system.
+          default: Component created by Backstage service DMaC, to specify a data quality rule (metric).
           ui:autofocus: true
           ui:widget: textarea
           ui:options:
@@ -98,8 +100,7 @@ spec:
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
-              - gitlab.centene.com
-#              - github.com ...
+              - github.com
 
   # These steps are executed in the scaffolder backend, using data that we gathered
   # via the parameters above.
@@ -123,6 +124,7 @@ spec:
       input:
         targetPath: ./docs
         url: ./docs
+        # url: https://github.com/cgallisa/cacorepo01/edit/main/projects/DaC/services/DMaC/content/docs/
         values:
           Source: ${{ parameters.Source }}
           Schema: ${{ parameters.Schema }}
@@ -131,20 +133,11 @@ spec:
           Description: ${{ parameters.Description }}
 
     # This step publishes the contents of the working directory to GitHub.
-#    - id: publish-github
-#      name: Publish GitHub
-#      action: publish:github
-#      input:
-#        allowedHosts: ['github.com']
-#        description: Backstage's created repo for [${{ parameters.Source }}].[${{ parameters.Schema }}].[${{ parameters.Table }}]
-#        repoUrl: ${{ parameters.repoUrl }}
-
-    # This step publishes the contents of the working directory to GitLab.
-    - id: publish-gitlab
-      name: Publish GitLab
-      action: publish:gitlab
+    - id: publish
+      name: Publish
+      action: publish:github
       input:
-        allowedHosts: ['gitlab.centene.com']
+        allowedHosts: ['github.com']
         description: Backstage's created repo for [${{ parameters.Source }}].[${{ parameters.Schema }}].[${{ parameters.Table }}]
         repoUrl: ${{ parameters.repoUrl }}
 

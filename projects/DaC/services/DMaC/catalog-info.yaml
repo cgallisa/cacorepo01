@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: DMaC
-  title: Data Metric - V1.0
+  title: Data Metric - V1.1
   description: A service to create a data quality metric in the standard platform (i.e. Bigeye)
   annotations:
     backstage.io/techdocs-ref: dir:.
@@ -27,8 +27,6 @@ spec:
         - Source
         - Schema
         - Table
-        - Name
-        - Description
       properties:
 
         Source:

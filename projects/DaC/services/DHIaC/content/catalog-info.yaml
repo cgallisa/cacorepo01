@@ -4,11 +4,11 @@ metadata:
   name: tbl-${{ values.Source }}.${{ values.Schema }}.${{ values.Table }}
   description: |
     ${{ values.Name }}
-    
+
     ${{ values.Description }}
-    
+
     *Note: see TechDocs for full documentation
-    
+
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
@@ -16,7 +16,7 @@ metadata:
     - data
   links:
     - url: https://use6.dm-us.informaticacloud.com/mona/ingestion-dashboard
-      title: IDMC - Mass Ingestion Dashboard
+      title: IDMC-MI Dashboard
       icon: dashboard
       type: admin-dashboard
 spec:
